@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-10-31T14:06:23.675918Z</date>
+  <millis>1698761183675</millis>
+  <nanos>918000</nanos>
+  <sequence>0</sequence>
+  <logger>edu.wm.cs.cs301.wordle.controller.ReadWordsRunnable</logger>
+  <level>INFO</level>
+  <class>edu.wm.cs.cs301.wordle.controller.ReadWordsRunnable</class>
+  <method>run</method>
+  <thread>21</thread>
+  <message>Created word list of 4435 words.</message>
+</record>
+</log>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-11-20T01:59:20.100925200Z</date>
+  <millis>1700445560100</millis>
+  <nanos>925200</nanos>
+  <sequence>1</sequence>
+  <logger>edu.wm.cs.cs301.wordle.controller.ReadWordsRunnable</logger>
+  <level>INFO</level>
+  <class>edu.wm.cs.cs301.wordle.controller.ReadWordsRunnable</class>
+  <method>run</method>
+  <thread>24</thread>
+  <message>Created word list of 2343 words.</message>
+</record>
+<record>
+  <date>2023-11-20T01:59:24.343165Z</date>
+  <millis>1700445564343</millis>
+  <nanos>165000</nanos>
+  <sequence>2</sequence>
+  <logger>edu.wm.cs.cs301.wordle.controller.ReadWordsRunnable</logger>
+  <level>INFO</level>
+  <class>edu.wm.cs.cs301.wordle.controller.ReadWordsRunnable</class>
+  <method>run</method>
+  <thread>25</thread>
+  <message>Created word list of 4435 words.</message>
+</record>
+<record>
+  <date>2023-11-20T01:59:27.742329700Z</date>
+  <millis>1700445567742</millis>
+  <nanos>329700</nanos>
+  <sequence>3</sequence>
+  <logger>edu.wm.cs.cs301.wordle.controller.ReadWordsRunnable</logger>
+  <level>INFO</level>
+  <class>edu.wm.cs.cs301.wordle.controller.ReadWordsRunnable</class>
+  <method>run</method>
+  <thread>26</thread>
+  <message>Created word list of 7030 words.</message>
+</record>
