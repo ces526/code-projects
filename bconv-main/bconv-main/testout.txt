@@ -1,0 +1,299 @@
+****************************************
+* Base Values:         Input Mode: Dec *
+*   Hex     :  0000                    *
+*   Octal   :  000000                  *
+*   Decimal :  0                       *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: s
+Enter decimal value: 1693
+
+****************************************
+* Base Values:         Input Mode: Dec *
+*   Hex     :  069D                    *
+*   Octal   :  003235                  *
+*   Decimal :  1693                    *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: c
+
+****************************************
+* Base Values:         Input Mode: Dec *
+*   Hex     :  0000                    *
+*   Octal   :  000000                  *
+*   Decimal :  0                       *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: s
+Enter decimal value: -1
+
+****************************************
+* Base Values:         Input Mode: Dec *
+*   Hex     :  FFFF                    *
+*   Octal   :  177777                  *
+*   Decimal :  -1                      *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: h
+Mode: Hexadecimal
+
+****************************************
+* Base Values:         Input Mode: Hex *
+*   Hex     :  FFFF                    *
+*   Octal   :  177777                  *
+*   Decimal :  -1                      *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: s
+Enter hex value: 888
+
+****************************************
+* Base Values:         Input Mode: Hex *
+*   Hex     :  0888                    *
+*   Octal   :  004210                  *
+*   Decimal :  2184                    *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: s
+Enter hex value: FFFF
+
+****************************************
+* Base Values:         Input Mode: Hex *
+*   Hex     :  FFFF                    *
+*   Octal   :  177777                  *
+*   Decimal :  -1                      *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: C
+
+****************************************
+* Base Values:         Input Mode: Hex *
+*   Hex     :  0000                    *
+*   Octal   :  000000                  *
+*   Decimal :  0                       *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: O
+Mode: Octal
+
+****************************************
+* Base Values:         Input Mode: Oct *
+*   Hex     :  0000                    *
+*   Octal   :  000000                  *
+*   Decimal :  0                       *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: S
+Enter octal value: 5777
+
+****************************************
+* Base Values:         Input Mode: Oct *
+*   Hex     :  0BFF                    *
+*   Octal   :  005777                  *
+*   Decimal :  3071                    *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: S
+Enter octal value: 32065
+
+****************************************
+* Base Values:         Input Mode: Oct *
+*   Hex     :  3435                    *
+*   Octal   :  032065                  *
+*   Decimal :  13365                   *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: D
+Mode: Decimal
+
+****************************************
+* Base Values:         Input Mode: Dec *
+*   Hex     :  3435                    *
+*   Octal   :  032065                  *
+*   Decimal :  13365                   *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: s
+Enter decimal value: -29787
+
+****************************************
+* Base Values:         Input Mode: Dec *
+*   Hex     :  8BA5                    *
+*   Octal   :  105645                  *
+*   Decimal :  -29787                  *
+****************************************
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: g
+
+Invalid option: g
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: quit
+
+Invalid option: quit
+
+Please select one of the following options:
+
+O  Octal Mode
+H  Hexadecimal Mode
+D  Decimal Mode
+
+C  Clear Value
+S  Set Value
+
+Q  Quit
+
+Option: q

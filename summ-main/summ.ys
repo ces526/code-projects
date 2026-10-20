@@ -1,0 +1,44 @@
+.pos 0
+Init: 
+
+     irmovl arr, %ebp
+     irmovl arr, %esp
+     
+     irmovl $-5, %eax #sum = -5
+     irmovl $10, %ebx # N = 5 (loop one)
+     irmovl $0, %ecx # n = 0 (loop two)
+     irmovl $1, %edx #temp = 1
+     
+     LoopOne: 
+              rrmovl %ebx, %ecx # n = N 
+              
+              LoopTwo: irmovl $0, %edi # reset i to 0
+                       subl %edx, %eax # sum = sum - 1
+                       subl %edx, %eax # sum = sum - 1
+                       
+                       LoopThree: irmovl $5, %edx # prepare to add 5
+                                  addl %edx, %eax # sum = sum + 5
+                                  irmovl $1, %edx # prepare to add 1 to i
+                                  
+                                  addl %edx, %edi # i++
+                                  
+                                  rrmovl %ecx, %esi # comparison value
+                                  subl %edi, %esi # if n - i > 0, jump to LoopThree
+                                  jg LoopThree
+                                  
+                       subl %edx, %ecx # if n - 1 is >= 0, jump to LoopTwo
+                       jge LoopTwo
+                       
+              irmovl $4, %edx # prepare to subtract 4 from pointer
+              rmmovl %eax, (%esp) # register-to-memory: sum value at esp address
+              irmovl $-5, %eax # reset sum value
+              subl %edx, %esp # subtract 4 from pointer
+              
+              irmovl $1, %edx # reset temp to 1
+              subl %edx, %ebx # if N - 1 >= 0 then jump to LoopOne
+              jge LoopOne
+              
+
+.pos 0x100
+arr:
+    

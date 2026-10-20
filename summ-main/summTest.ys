@@ -1,0 +1,58 @@
+.pos 0x0
+           irmovl $0,   %ecx     # i = 0
+           irmovl $3,   %ebx     # mult3 = 3
+           irmovl $0,   %edx     # offset for arr
+
+initloop:  rrmovl %edx, %esi     # %esi = %edx
+           irmovl arr,  %eax     # %eax = base of arr
+           addl   %eax, %esi     # %esi = base + offset
+
+           rmmovl %ebx, (%esi)   # arr[i] = mult3
+
+           irmovl $4,   %eax     # get ready to compute next addr in arr
+           addl   %eax, %edx     # offset increased by 4 bytes
+
+           irmovl $3,   %eax     # get ready to compute next mult of 3
+           addl   %eax, %ebx     # mult3 += 3
+
+           irmovl $1,   %eax     # get ready to incr i
+           addl   %eax, %ecx     # i++
+
+           irmovl $20,  %edi     # end loop val
+           subl   %ecx, %edi     # %edi = %edi - %ecx
+           jg     initloop       # while (i < 20)
+
+           irmovl $0,   %ecx     # i = 0
+           irmovl $0,   %ebx     # sum = 0
+           irmovl $0,   %edx     # offset for arr
+
+addloop:   rrmovl %edx, %esi     # %esi = %edx
+           irmovl arr,  %eax     # %eax = base of arr
+           addl   %eax, %esi     # %esi = addr of val
+
+           mrmovl (%esi), %eax   # %eax = arr[i]
+           rrmovl %eax, %esp     # %esp = arr[i]
+
+           irmovl $1,   %edi     # %edi = 1
+           andl   %edi, %esp     # %esp = val & 1
+
+           je     else           # if !(arr[i] & 1)
+           addl   %eax, %ebx     # sum += arr[i]
+
+else:      irmovl $4,   %eax     # get ready to compute next addr in arr
+           addl   %eax, %edx     # incr %edx by 4 bytes
+
+           irmovl $1,   %eax     # get ready to incr i
+           addl   %eax, %ecx     # i++
+
+           irmovl $20,  %edi     # end loop val
+           subl   %ecx, %edi     # %edi = %edi - %ecx
+           jg     addloop        # while (i < 20)
+
+           rmmovl %ebx, 4(%esi)  # save sum at end of arr
+
+           halt
+
+
+.align 4
+arr:
