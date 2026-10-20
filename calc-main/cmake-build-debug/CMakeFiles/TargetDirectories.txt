@@ -1,0 +1,3 @@
+C:/Users/corae/CS304/calc/cmake-build-debug/CMakeFiles/calc.c.dir
+C:/Users/corae/CS304/calc/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/corae/CS304/calc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
