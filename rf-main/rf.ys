@@ -1,0 +1,242 @@
+# PUT PROGRAM HEADER UP HERE
+
+.pos 0x0
+
+main:
+    irmovl Stack, %esp # set stack ptr
+    irmovl input, %esi # input
+    irmovl output, %edi # output
+
+    mrmovl (%esi), %ecx # %ecx holds values from input (x)
+
+mainloop:
+
+    irmovl $0, %edx # get ready to test value for 0
+    addl %ecx, %edx # add to set condition
+    je end # if value == 0, then end
+
+   pushl %ecx
+   pushl %ecx
+
+
+    call ab # call the absolute value function
+
+    popl %ecx
+    popl %ecx
+
+    irmovl $0x1, %edx # get ready to test value for odd or even
+    andl %ecx, %edx # if lsb bit is 1, value is odd
+    jne odd
+
+
+
+even:
+
+rrmovl %eax, %ebx
+
+pushl %ecx # save value
+pushl %ebx # push argument x
+
+
+call rf # call recursive function
+
+popl %ebx # pop argument
+popl %ecx # restore value
+
+jmp endloop # jump to the end
+
+odd: # if the number is odd
+
+pushl %ecx
+pushl %ecx
+
+call mult # call the mult function
+
+popl %ecx
+popl %ecx
+
+jmp endloop # jump to the end
+
+
+endloop: # this is the end
+
+rmmovl %ecx, (%edi) # store value in output
+
+irmovl $4, %edx # get ready to set next address
+addl %edx, %edi # set new output address
+
+rmmovl %eax, (%edi) # store return value in output
+
+addl %edx, %esi # set new input address
+addl %edx, %edi # set new output address
+
+mrmovl (%esi), %ecx # set %ecx to next input value
+
+jmp mainloop # go back to the beginning, with new input
+
+end:
+    halt
+
+
+ab: # absolute value function
+
+pushl %ebp # prologue
+rrmovl %esp, %ebp
+
+pushl %esi # save %edi value
+
+mrmovl 8(%ebp), %esi # ret = param(z)
+rrmovl %esi, %eax
+
+irmovl $0, %edx # prepare to test condition
+subl %eax, %edx # 0 - eax
+jl positive # if condition < 0, then num is positive
+
+negative: # if num is negative
+
+irmovl $0, %edx # prepare to get absolute value
+subl %eax, %edx # subtract negative from 0
+rrmovl %edx, %eax # move absolute value to returned register
+
+jmp endofab # jump to the end of function
+
+positive: # if num is positive
+irmovl $0, %edx
+addl %edx, %eax
+
+endofab: # this is the end of the function
+
+popl %esi # epilogue
+popl %ebp
+
+ret
+
+rf: # recursive function
+
+pushl %ebp # prologue
+rrmovl %esp, %ebp
+
+pushl %ebx
+pushl %edi
+pushl %esi
+
+mrmovl 8(%ebp), %esi # ret = param(z)
+
+irmovl $0, %edi # prepare to test base case
+subl %esi, %edi # if 0 - num = 0
+je caseone
+
+
+irmovl $1, %edi # prepare to test base case
+subl %esi, %edi # if num - 1 = 0
+je casetwo
+
+else: # other than the base cases
+
+
+rrmovl %esi, %ebx #set up ebx for call
+irmovl $1, %edx # set up for subtraction
+subl %edx, %ebx # %ebx = n - 1
+
+pushl %eax
+pushl %ebx
+
+call rf
+
+popl %ebx
+
+rrmovl %eax, %ecx
+popl %eax
+
+
+irmovl $1, %edx
+subl %edx, %ebx
+
+pushl %ecx
+pushl %ebx
+
+call rf
+
+popl %ebx
+popl %ecx
+
+rrmovl %eax, %edi
+
+irmovl $1, %edx
+subl %edx, %ecx
+
+recloop:
+
+addl %ecx, %eax
+subl %edx, %edi
+
+jg recloop
+
+jmp rec_end
+
+casetwo:
+
+irmovl $1, %eax
+jmp rec_end
+
+caseone:
+irmovl $2, %eax
+jmp rec_end
+
+
+rec_end:
+
+popl %esi
+popl %edi
+popl %ebx
+
+popl %ebp
+
+ret
+
+
+
+mult: # multiplication function
+
+pushl %ebp # prologue
+rrmovl %esp, %ebp
+
+pushl %esi # save %edi value
+
+mrmovl 8(%ebp), %esi # ret = param(n)
+rrmovl %eax, %esi
+
+rrmovl %esi, %edx
+irmovl $1, %ebx # prepare for loop
+
+subl %ebx, %edx # start one down (prevents extra loop run)
+
+multloop: # while loop equivalent
+
+addl %eax, %esi # add num to result
+subl %ebx, %edx # subtract one from loop condition number
+jg multloop # if condition > 0 then loop again
+
+rrmovl %esi, %eax # arrange registers properly
+
+popl %esi # epilogue
+
+popl %ebp
+
+ret
+
+.align 4
+
+input: # set input values
+ .long -6
+ .long 4
+ .long 5
+ .long -7
+ .long 8
+ .long 0
+
+output:
+
+.pos 0x400
+Stack:
+
