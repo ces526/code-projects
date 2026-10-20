@@ -1,0 +1,3 @@
+HARD,null,null
+MEDIUM,null,null
+EASY,user,12
